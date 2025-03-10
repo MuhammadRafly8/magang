@@ -27,6 +27,13 @@ class DrawerMenu extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: const Icon(Icons.timeline),
+              title: const Text('Track Vessel'),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/track_vessel');
+                },
+              ),
+            ListTile(
               leading: const Icon(Icons.warning, color: Colors.white),
               title: const Text('Alert', style: TextStyle(color: Colors.white)),
               onTap: () {

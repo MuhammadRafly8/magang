@@ -17,6 +17,7 @@ import 'screen/weather_screen.dart';
 import 'screen/markship_screen.dart';
 import 'screen/logout_screen.dart';
 import 'screen/return_user_screen.dart';
+import 'screen/track_vessel_screen.dart';
 
 
 void main() async {
@@ -106,6 +107,7 @@ class MyApp extends StatelessWidget {
           '/weather': (context) => const WeatherScreen(),
           '/markship': (context) => const MarkShipScreen(),
           '/logout': (context) => const LogoutScreen(),
+          '/track_vessel': (context) => const TrackVesselScreen(),
         },
         debugShowCheckedModeBanner: false,
       ),

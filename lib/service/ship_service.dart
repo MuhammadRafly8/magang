@@ -84,10 +84,6 @@ class ShipService extends ChangeNotifier {
       LogUtils.info('Connecting to WebSocket: $url');
       await _webSocketSubscription?.cancel();
       
-      // WebSocketService tidak memiliki metode connect() atau initialize() publik
-      // Karena WebSocketService menggunakan singleton pattern dan koneksi dibuat saat konstruksi
-      // Kita tidak perlu memanggil metode koneksi secara eksplisit
-      
       _webSocketSubscription = _webSocketService.shipDataStream.listen(
         _handleWebSocketData,
         onError: (error) {
