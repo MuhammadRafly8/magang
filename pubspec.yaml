@@ -1,0 +1,61 @@
+name: aisits_mobileapp
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  cupertino_icons: 
+  test: 
+  flutter_map: 
+  latlong2: 
+  http: 
+  web_socket_channel:
+  socket_io_client: 
+  flutter_svg: 
+  flutter_map_marker_cluster: 
+  async: 
+  provider: 
+  shared_preferences: 
+  path_provider: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/
+  - assets/ship.json
+  - assets/icons/cargo.svg
+  - assets/icons/cruise.svg
+  - assets/icons/special.svg
+  - assets/icons/support.svg
+  - assets/icons/tanker.svg
+  - assets/icons/unknown.svg
+  - assets/icons/kapaldiam/cargo.png
+  - assets/icons/kapaldiam/cruise.png
+  - assets/icons/kapaldiam/special.png
+  - assets/icons/kapaldiam/support.png
+  - assets/icons/kapaldiam/tanker.png
+  - assets/icons/kapaldiam/unknown.png
+  - assets/icons/bergerakUndifined/cargo.png
+  - assets/icons/bergerakUndifined/cruise.png
+  - assets/icons/bergerakUndifined/special.png
+  - assets/icons/bergerakUndifined/support.png
+  - assets/icons/bergerakUndifined/tanker.png
+  - assets/icons/bergerakUndifined/unknown.png
+  - assets/icons/diamAncored/cargo.png
+  - assets/icons/diamAncored/cruise.png
+  - assets/icons/diamAncored/special.png
+  - assets/icons/diamAncored/support.png
+  - assets/icons/diamAncored/tanker.png
+  - assets/icons/diamAncored/unknown.png

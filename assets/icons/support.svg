@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 201.26 201.26" style="opacity: 1">
+                                <g id="shipShape" transform="rotate(0, 100.63, 100.63) translate(0,0)">
+                                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="100.6304" y1="184.1841" x2="100.6304" y2="17.0771">
+                                        <stop offset="0" style="stop-color:#00E8E8"></stop>
+                                        <stop offset="1" style="stop-color:cyan"></stop>
+                                    </linearGradient>
+                                    <polygon fill="cyan" points="100.825,17.077 65.197,85.656 65.197,184.184 101.567,152.832 136.063,184.184 136.063,81.578"></polygon>
+                                    <g>
+                                        <path fill="none" d="M136.063,184.184"></path>
+                                        <path fill="#078d8d" d="M100.864,0.366L58.11,86.064v114.831l43.646-37.624l41.394,37.624V81.171L100.864,0.366z M136.063,184.184
+                                            l-34.496-31.353l-36.371,31.353V85.656l35.628-68.58l35.238,64.501V184.184z"></path>
+                                    </g>
+                                </g>
+                            </svg>
