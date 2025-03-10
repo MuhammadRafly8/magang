@@ -10,6 +10,8 @@ import '../service/ship_service.dart';
 import '../widget/polygon_widget.dart';
 import '../widget/custom_drawer.dart';
 import '../widget/ship_detail_dialog.dart';
+import '../service/heatmap_service.dart';
+import '../widget/heatmap_layer.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -181,7 +183,14 @@ class _MapScreenState extends State<MapScreen> with AutomaticKeepAliveClientMixi
                 TileLayer(
                   urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 ),
-                // Removed HeatmapLayer and Consumer
+                Consumer<HeatmapService>(
+                  builder: (context, heatmapService, child) {
+                    if (heatmapService.showHeatmap && heatmapService.heatPoints.isNotEmpty) {
+                      return HeatmapLayer(heatPoints: heatmapService.heatPoints);
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
                 PolygonLayer(polygons: getPolygons()),
                 MarkerLayer(
                   markers: shipProvider.ships.values.map((ship) => _createMarker(ship)).toList(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'heatmap_dialog.dart';
 
 
 class DrawerMenu extends StatelessWidget {
@@ -27,7 +28,20 @@ class DrawerMenu extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.timeline),
+              leading: const Icon(Icons.heat_pump_outlined, color: Colors.white),
+              title: const Text('Heatmap'),
+              onTap: () {
+              Navigator.pop(context); // Close the drawer
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return const HeatmapDialog();
+                  },
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.timeline, color: Colors.white,),
               title: const Text('Track Vessel'),
               onTap: () {
                 Navigator.pushReplacementNamed(context, '/track_vessel');

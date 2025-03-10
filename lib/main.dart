@@ -18,6 +18,7 @@ import 'screen/markship_screen.dart';
 import 'screen/logout_screen.dart';
 import 'screen/return_user_screen.dart';
 import 'screen/track_vessel_screen.dart';
+import 'service/heatmap_service.dart';
 
 
 void main() async {
@@ -30,6 +31,7 @@ void main() async {
       final notificationService = NotificationService();
       final weatherService = WeatherService();
       final loadingService = LoadingService();  
+      final heatmapService = HeatmapService();
   
       runApp(
         // Di bagian providers
@@ -39,6 +41,7 @@ void main() async {
             ChangeNotifierProvider.value(value: notificationService),  
             ChangeNotifierProvider.value(value: jsonServiceProvider),
             Provider.value(value: weatherService),
+            ChangeNotifierProvider.value(value: heatmapService),
             ChangeNotifierProvider(
               create: (context) => ShipProvider(
                 jsonService: Provider.of<JsonServiceProvider>(context, listen: false).jsonService,
