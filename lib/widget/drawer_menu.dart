@@ -29,7 +29,7 @@ class DrawerMenu extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.heat_pump_outlined, color: Colors.white),
-              title: const Text('Heatmap'),
+              title: const Text('Heatmap', style: TextStyle(color: Colors.white)),
               onTap: () {
               Navigator.pop(context); // Close the drawer
               showDialog(
@@ -42,7 +42,7 @@ class DrawerMenu extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.timeline, color: Colors.white,),
-              title: const Text('Track Vessel'),
+              title: const Text('Track Vessel', style: TextStyle(color: Colors.white),),
               onTap: () {
                 Navigator.pushReplacementNamed(context, '/track_vessel');
                 },

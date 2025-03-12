@@ -71,7 +71,7 @@ class ShipProvider with ChangeNotifier {
       for (final key in keysToRemove) {
         _shipCache.remove(key);
         _markers.remove(key);
-        LogUtils.info('Cleaned cache for ship: $key');
+        LogUtils.info('Cache cleanup', 'Removed ship with ID: $key');
       }
       notifyListeners();
     }
@@ -89,7 +89,7 @@ class ShipProvider with ChangeNotifier {
         if (jsonShipData != null) {
           ship.name = jsonShipData['NAME']?.toString();
           ship.type = jsonShipData['TYPENAME']?.toString();
-          LogUtils.info('Updated ship data - MMSI: $mmsi, Name: ${ship.name}, Type: ${ship.type}');
+          LogUtils.info('Updated ship data', 'MMSI: $mmsi, Name: ${ship.name}, Type: ${ship.type}');
         }
   
         _shipCache[mmsi] = ship;
@@ -126,7 +126,8 @@ class ShipProvider with ChangeNotifier {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
-              LogUtils.info("Marker tapped: ${shipData.name}");
+              // Fix: Add the second parameter to LogUtils.info
+              LogUtils.info("Marker tapped", "Ship: ${shipData.name ?? 'Unknown'}");
               if (onMarkerTap != null) {
                 onMarkerTap!(shipData);
               }

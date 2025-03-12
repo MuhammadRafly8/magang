@@ -71,7 +71,7 @@ class ShipService extends ChangeNotifier {
       
       // Buat salinan baru dari Map untuk memicu notifikasi
       markersNotifier.value = Map.from(markersNotifier.value);
-      LogUtils.info('Cleaned up ${keysToRemove.length} old ships. Current cache: ${ships.length}');
+      LogUtils.info('Cache Cleanup', 'Cleaned up ${keysToRemove.length} old ships. Current cache: ${ships.length}');
     } catch (e) {
       LogUtils.error('Error during cleanup', e);
     }
@@ -81,7 +81,7 @@ class ShipService extends ChangeNotifier {
     _isConnecting = true;
     
     try {
-      LogUtils.info('Connecting to WebSocket: $url');
+      LogUtils.info('WebSocket Connection', 'Connecting to WebSocket: $url');
       await _webSocketSubscription?.cancel();
       
       _webSocketSubscription = _webSocketService.shipDataStream.listen(
@@ -92,13 +92,13 @@ class ShipService extends ChangeNotifier {
         },
         onDone: () {
           if (!_isDisposed) {
-            LogUtils.info('WebSocket connection closed');
+            LogUtils.info('WebSocket Connection', 'WebSocket connection closed');
             _handleReconnection(url, token);
           }
         },
       );
       _reconnectCount = 0;
-      LogUtils.info('WebSocket connected successfully');
+      LogUtils.info('WebSocket Connection', 'WebSocket connected successfully');
     } catch (e) {
       LogUtils.error('WebSocket connection error', e);
       _handleReconnection(url, token);
@@ -225,7 +225,7 @@ class ShipService extends ChangeNotifier {
         if (isPointInPolygon(latLng, polygon.points)) {
           var color = polygon.color ?? Colors.blue;
           _handleShipInPolygon(shipName, color);
-          LogUtils.info("Ship in polygon: $shipName");
+          LogUtils.info("Ship Location", "Ship in polygon: $shipName");
           return;
         }
       }
@@ -245,10 +245,10 @@ class ShipService extends ChangeNotifier {
 
       if (isDangerZone) {
         _notificationService.addDangerMessage(message);
-        LogUtils.info("Notifikasi bahaya ditambahkan untuk $shipName");
+LogUtils.info("Danger Notification", "Notifikasi bahaya ditambahkan untuk $shipName");
       } else if (isRestrictedZone) {
         _notificationService.addAlertMessage(message);
-        LogUtils.info("Notifikasi peringatan ditambahkan untuk $shipName");
+LogUtils.info("Alert Notification", "Warning notification added for $shipName");
       }
       
       notifyListeners();
@@ -386,7 +386,7 @@ class ShipService extends ChangeNotifier {
     try {
       final List<dynamic> jsonData = await _jsonService.loadShipData();
       if (jsonData.isEmpty) {
-        LogUtils.info("Ship data not available");
+        LogUtils.info("Ship Data", "Ship data not available");
         return;
       }
   
@@ -395,7 +395,7 @@ class ShipService extends ChangeNotifier {
         if (_processShipJson(shipJson)) validShips++;
       }
       
-      LogUtils.info("Initialized $validShips ships");
+      LogUtils.info("Ship Initialization", "Initialized $validShips ships");
     } catch (e) {
       LogUtils.error('Ship data loading failed', e);
     }
