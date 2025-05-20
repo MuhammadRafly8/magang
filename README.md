@@ -1,16 +1,14 @@
-# aisits2
+# aisits_mobileapps
 
-A new Flutter project.
+ini adalah mobile apps aisits
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+langakah pertama yakni clone repo ini dengan menggunakan git clone https://github.com/MuhammadRafly8/magang.git
+ 
+lalu lakukan inisialisai dependenci dengan melakukan flutter pub get 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+cara run 
+1.siapkan device/emulator
+2.masuk ke file main.dart
+3.pencet run di atas void
